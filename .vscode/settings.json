@@ -1,0 +1,26 @@
+{
+    // Rimuove i warning per le proprietà -fx- nel CSS
+    "css.lint.unknownProperties": "ignore",
+
+    // Suggerisce a VS Code di usare Maven per gestire le dipendenze Java
+    "java.configuration.updateBuildConfiguration": "automatic",
+
+    // Esclude cartelle inutili dalle ricerche per velocizzare VS Code
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/target": true
+    },
+
+    // Forza l'uso di UTF-8 (fondamentale per i caratteri speciali nel codice)
+    "files.encoding": "utf8",
+
+    // Se vuoi attivare l'autocompletamento specifico per JavaFX (se hai l'estensione)
+    "java.completion.importOrder": [
+        "java",
+        "javax",
+        "javafx",
+        "com",
+        "org"
+    ]
+}
