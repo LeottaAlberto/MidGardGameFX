@@ -17,14 +17,26 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("hub"), 640, 480);
+        scene = new Scene(loadFXML("hub"), 1600, 1200);
         
         String css = this.getClass().getResource("styles/baseStyle.css").toExternalForm();
+        String hubCSS = this.getClass().getResource("styles/hubStyle.css").toExternalForm();
         scene.getStylesheets().add(css);
+        scene.getStylesheets().add(hubCSS);
         
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
+        // try {
+
+        // } catch (final Exception e) {
+        //     // Questo ti mostra la causa reale (es. "Button non trovato")
+        //     e.getCause().printStackTrace(); 
+        //     // Oppure, se la causa ha un'altra causa:
+        //     Throwable t = e.getCause();
+        //     while (t.getCause() != null) t = t.getCause();
+        //     System.err.println("ERRORE REALE: " + t.getMessage());
+        // }
     }
 
     static void setRoot(String fxml) throws IOException {
