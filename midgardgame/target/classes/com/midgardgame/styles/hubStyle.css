@@ -1,0 +1,32 @@
+#hubContainer {
+    -fx-min-width: 100%;
+    -fx-min-height: 100%;
+
+    -fx-background-image: url("../images/HubImage/background.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#hubTitle {
+    -fx-background-image: url("../images/HubImage/titleDef.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#playButton {
+    -fx-background-image: url("../images/HubImage/buttonPlay.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#settingsButton { 
+    -fx-background-image: url("../images/HubImage/settings_btn.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#exitButton {
+    -fx-background-image: url("../images/HubImage/exit_btn.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
