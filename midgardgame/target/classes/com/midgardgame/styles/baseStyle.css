@@ -2,3 +2,17 @@
     -fx-font-family: "Segoe UI";
     -fx-background-color: #1a1a1a; /* Sfondo scuro per il tuo gioco */
 }
+
+.button {
+    -fx-min-width: 320px;
+    -fx-min-height: 100px;
+    -fx-background-color: trasparent;
+    -fx-transition-duration: all 0.05s;
+    -fx-border-color: none;
+}
+
+.button:hover {
+    /* -fx-background-image: urk("../images/HubImage/"); */
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
