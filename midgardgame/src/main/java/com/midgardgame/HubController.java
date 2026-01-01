@@ -25,7 +25,6 @@ public class HubController implements Initializable {
     @FXML
     private VBox hubContainer;
 
-
     @FXML
     private ImageView hubTitle;
 
@@ -33,7 +32,7 @@ public class HubController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Image logo = new Image(getClass().getResourceAsStream("/com/midgardgame/images/HubImage/titleDef.png"));
-        
+
         if (logo != null) {
             hubTitle.setImage(logo);
         } else {
@@ -45,10 +44,12 @@ public class HubController implements Initializable {
     private void switchToPlayerChoser() throws IOException {
         App.setRoot("playerChoser");
     }
+
     @FXML
     private void switchToSettings() throws IOException {
         App.setRoot("settings");
     }
+
     @FXML
     private void closeApp() throws IOException {
         Platform.exit();

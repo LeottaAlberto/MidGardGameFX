@@ -11,147 +11,131 @@
 <?import javafx.scene.image.Image?>
 
 <VBox fx:id="containerPlayerChoser" alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.midgardgame.PlayerChoserController">
-    <GridPane styleClass="container" VBox.vgrow="ALWAYS">
+  <GridPane styleClass="container" VBox.vgrow="ALWAYS">
+    <columnConstraints>
+      <ColumnConstraints percentWidth="55"/>
+      <ColumnConstraints percentWidth="45"/>
+    </columnConstraints>
+    <rowConstraints>
+      <RowConstraints percentHeight="0" vgrow="ALWAYS"/>
+      <RowConstraints percentHeight="100" vgrow="ALWAYS"/>
+    </rowConstraints>
+    <HBox 
+                fx:id="backBtnContainer" 
+                styleClass="container"
+                GridPane.rowIndex="0" 
+                alignment="TOP_LEFT" 
+                >
+      <Button fx:id="backHubBtn" text="HUB" onAction="#switchToHub"/>
+    </HBox>
+    <GridPane 
+                GridPane.columnIndex="0" 
+                GridPane.rowIndex="1"
+                alignment="CENTER"
+                styleClass="container" 
+                maxHeight="Infinity">
+      <columnConstraints>
+        <ColumnConstraints percentWidth="100"/>
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints percentHeight="20" vgrow="ALWAYS"/>
+        <RowConstraints percentHeight="70" vgrow="ALWAYS"/>
+      </rowConstraints>
+      <!-- Box Statistiche -->
+      <VBox
+                      GridPane.rowIndex="0" 
+                      alignment="CENTER"
+                      maxWidth="Infinity" 
+                      maxHeight="Infinity">
+        <!-- Statistiche -->
+        <VBox
+                            fx:id="statPanel"
+                            maxWidth="800" 
+                            minWidth="800"
+                            prefHeight="200"
+                            alignment="CENTER">
+          <Label text="Stat Character &#10;Carattere per andare a capo"/>
+        </VBox>
+      </VBox>
+      <!-- Box Character IMG -->
+      <VBox
+                      fx:id="characterBox"
+                      maxWidth="Infinity" 
+                      maxHeight="Infinity"
+                      alignment="BOTTOM_CENTER"
+                      GridPane.rowIndex="1"
+                      style="-fx-background-color: trasparent;">
+        <!-- Character IMG -->
+        <ImageView 
+                            fx:id="heroImageView"
+                            preserveRatio="true"
+                            fitHeight="500.0"
+                            smooth="true"
+                            pickOnBounds="true">
+          <image>
+            <Image url="@../images/HeroImage/gollum.png"/>
+          </image>
+        </ImageView>
+      </VBox>
+    </GridPane>
+    <VBox 
+                GridPane.columnIndex="1" 
+                styleClass="container" 
+                maxHeight="Infinity"
+                alignment="CENTER">
+      <Label text="Choice Your Character"/>
+      <GridPane>
         <columnConstraints>
-            <ColumnConstraints percentWidth="55"/>
-            <ColumnConstraints percentWidth="45"/>
+          <ColumnConstraints percentWidth="50"/>
+          <ColumnConstraints percentWidth="50"/>
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints percentHeight="0" vgrow="ALWAYS"/>
-            <RowConstraints percentHeight="100" vgrow="ALWAYS"/>
+          <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
+          <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
+          <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
+          <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
         </rowConstraints>
-
-
-        <HBox 
-            fx:id="backBtnContainer" 
-            styleClass="container"
-            GridPane.rowIndex="0" 
-            alignment="TOP_LEFT" 
-            > 
-            <Button fx:id="backHubBtn" text="HUB" onAction="#switchToHub" />
-        </HBox>
-
-
-        <GridPane 
-            GridPane.columnIndex="0" 
-            GridPane.rowIndex="1"
-            alignment="CENTER"
-            styleClass="container" 
-            maxHeight="Infinity">
-
-            <columnConstraints>
-                <ColumnConstraints percentWidth="100"/>
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints percentHeight="20" vgrow="ALWAYS"/>
-                <RowConstraints percentHeight="70" vgrow="ALWAYS"/>
-            </rowConstraints>
-
-            <!-- Box Statistiche -->
-            <VBox
-                GridPane.rowIndex="0" 
-                alignment="CENTER"
-                maxWidth="Infinity" 
-                maxHeight="Infinity">
-
-                <!-- Statistiche -->
-                <VBox
-                    fx:id="statPanel"
-                    maxWidth="800" 
-                    minWidth="800"
-                    prefHeight="200"
-                    alignment="CENTER">
-                    
-                    <Label text="Stat Character &#10;Carattere per andare a capo" />
-                </VBox>
-            </VBox>
-            
-            <!-- Box Character IMG -->
-            <VBox
-                fx:id="characterBox"
-                maxWidth="Infinity" 
-                maxHeight="Infinity"
-                alignment="BOTTOM_CENTER"
-                GridPane.rowIndex="1"
-                style="-fx-background-color: trasparent;">
-
-                <!-- Character IMG -->
-                <ImageView 
-                    fx:id="heroImageView"
-                    preserveRatio="true"
-                    fitHeight="500.0"
-                    smooth="true"
-                    pickOnBounds="true"> 
-                    <image>
-                        <Image url="@../images/HeroImage/gollum.png" />
-                    </image>
-                </ImageView>
-            </VBox>
-        </GridPane>
-        
-        <VBox 
-            GridPane.columnIndex="1" 
-            styleClass="container" 
-            maxHeight="Infinity"
-            alignment="CENTER">
-            
-
-            <Label text="Choice Your Character" />
-            
-            <GridPane>
-                <columnConstraints>
-                    <ColumnConstraints percentWidth="50"/>
-                    <ColumnConstraints percentWidth="50"/>
-                </columnConstraints>
-                <rowConstraints>
-                    <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
-                    <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
-                    <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
-                    <RowConstraints percentHeight="25" vgrow="ALWAYS"/>
-                </rowConstraints>
-
-                <Button
-                    GridPane.columnIndex="0" 
-                    GridPane.rowIndex="0"
-                    Text="1">
+        <Button
+                            GridPane.columnIndex="0" 
+                            GridPane.rowIndex="0"
+                            Text="1">
                 </Button>
-                <Button
-                    GridPane.columnIndex="1" 
-                    GridPane.rowIndex="0"
-                    Text="2">
+        <Button
+                            GridPane.columnIndex="1" 
+                            GridPane.rowIndex="0"
+                            Text="2">
                 </Button>
-                <Button
-                    GridPane.columnIndex="2" 
-                    GridPane.rowIndex="0"
-                    Text="3">
+        <Button
+                            GridPane.columnIndex="2" 
+                            GridPane.rowIndex="0"
+                            Text="3">
                 </Button>
-                <Button
-                    GridPane.columnIndex="3" 
-                    GridPane.rowIndex="0"
-                    Text="4">
+        <Button
+                            GridPane.columnIndex="3" 
+                            GridPane.rowIndex="0"
+                            Text="4">
                 </Button>
-                <Button
-                    GridPane.columnIndex="0" 
-                    GridPane.rowIndex="1"
-                    Text="5">
+        <Button
+                            GridPane.columnIndex="0" 
+                            GridPane.rowIndex="1"
+                            Text="5">
                 </Button>
-                <Button
-                    GridPane.columnIndex="1" 
-                    GridPane.rowIndex="1"
-                    Text="6">
+        <Button
+                            GridPane.columnIndex="1" 
+                            GridPane.rowIndex="1"
+                            Text="6">
                 </Button>
-                <Button
-                    GridPane.columnIndex="2" 
-                    GridPane.rowIndex="1"
-                    Text="7">
+        <Button
+                            GridPane.columnIndex="2" 
+                            GridPane.rowIndex="1"
+                            Text="7">
                 </Button>
-                <Button
-                    GridPane.columnIndex="3" 
-                    GridPane.rowIndex="1"
-                    Text="8">
+        <Button
+                            GridPane.columnIndex="3" 
+                            GridPane.rowIndex="1"
+                            Text="8">
                 </Button>
-            </GridPane>
-
-        </VBox>
-    </GridPane>
+      </GridPane>
+    </VBox>
+  </GridPane>
 </VBox>

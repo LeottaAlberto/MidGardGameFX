@@ -10,11 +10,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-public class PlayerChoserController implements Initializable{
-    
-    @FXML private ImageView heroImageView;
-    @FXML private VBox characterBox;
+public class PlayerChoserController implements Initializable {
 
+    @FXML
+    private ImageView heroImageView;
+    @FXML
+    private VBox characterBox;
 
     @SuppressWarnings("unused")
     @Override
