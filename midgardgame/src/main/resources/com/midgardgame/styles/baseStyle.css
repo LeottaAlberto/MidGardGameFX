@@ -16,3 +16,7 @@
     -fx-scale-x: 1.03;
     -fx-scale-y: 1.03;
 }
+
+.container {
+    -fx-padding: 20;
+}

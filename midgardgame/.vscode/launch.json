@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "AVVIA PROGETTO (Midgard)",
+            "request": "launch",
+            "mainClass": "com.midgardgame.App",
+            "projectName": "midgardgame"
+        },
+        {
+            "type": "java",
+            "name": "File Corrente (Debug)",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}

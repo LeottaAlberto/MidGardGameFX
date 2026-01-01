@@ -32,19 +32,61 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.midgardgame.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.6</version>
+                <configuration>
+                    <mainClass>com.midgardgame.App</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.midgardgame.App</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>midgardgame</finalName>
+                    <appendAssemblyId>true</appendAssemblyId>
+                </configuration>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running -->
-                        <!-- Usage: mvn clean javafx:run -->
-                        <id>default-cli</id>
-                        <configuration>
-                            <mainClass>com.midgardgame.App</mainClass>
-                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jpackage-plugin</artifactId>
+                <version>0.1.5</version>
+                <configuration>
+                    <input>${project.build.directory}/libs</input>
+                    <output>${project.build.directory}/dist</output>
+                    <mainJar>midgardgame-1.0-SNAPSHOT.jar</mainJar>
+                    <mainClass>com.midgardgame.App</mainClass>
+                    <appName>MidgardGame</appName>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -16,9 +16,9 @@
       </image>
    </ImageView>
    <children>
-      <Button fx:id="playButton" Text="" onAction="#switchToSecondary"/>
-      <Button fx:id="settingsButton" Text="" onAction="#switchToSecondary"/>
-      <Button fx:id="exitButton" Text="" onAction="#switchToSecondary"/>
+      <Button fx:id="playButton" Text="" onAction="#switchToPlayerChoser"/>
+      <Button fx:id="settingsButton" Text="" onAction="#switchToSettings"/>
+      <Button fx:id="exitButton" Text="" onAction="#closeApp"/>
       </children>
 </VBox>
 
